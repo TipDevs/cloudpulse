@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/40c93fcbb9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>CloudPulse</title>
+  </head>
+  <body>
+    <main class="glass">
+      <img
+        src="./assets/images/cloudpulse.webp"
+        alt="cloudpulse logo"
+        id="logo"
+      />
+      <section class="weather_section glass fetchingData">
+        <p class="data_fetching" style="display: none">Fetching data......</p>
+        <p class="error_message queryFailed"></p>
+        <div class="city_info queryFailed">
+          <p class="city_name"></p>
+          <p class="city_time"></p>
+          <p class="city_date"></p>
+        </div>
+        <div class="temp_toggler queryFailed">
+          <p class="celcius">°c</p>
+          <p class="fahrenheit">°f</p>
+        </div>
+        <p class="condition_message queryFailed"></p>
+        <img
+          src="https://images.unsplash.com/photo-1699501105785-8b796e996dad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTEwMTl8MHwxfHNlYXJjaHwxfHxwYXJ0bHktY2xvdWR5LW5pZ2h0fGVufDB8fHx8MTc1NTAzNTk2N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+          alt="#"
+          class="cityImage queryFailed"
+        />
+        <div class="imageGlass queryFailed"></div>
+        <div class="weather_info queryFailed">
+          <div class="temperature_box">
+            <img src="./assets/images/temperature.svg" alt="" />
+            <p class="temperature-txt"></p>
+          </div>
+          <div class="humidity_box">
+            <img src="./assets/images/humidity.svg" alt="" />
+            <p class="humidity-txt"></p>
+          </div>
+          <div class="fatality">
+            <div>
+              <img
+                src="./assets/images/windSpeed.svg"
+                alt=""
+                class="windSpeedSvg small"
+              />
+              <p class="windSpeed-txt"></p>
+            </div>
+            <div>
+              <img
+                src="./assets/images/cloudy.svg"
+                alt=""
+                class="cloudCoverSvg small"
+              />
+              <p class="cloudCover-txt"></p>
+            </div>
+            <div>
+              <img
+                src="./assets/images/visibility.svg"
+                alt=""
+                class="visibilitySvg small"
+              />
+              <p class="visibility-txt"></p>
+            </div>
+          </div>
+          <!-- <div class="weather4"></div> -->
+        </div>
+      </section>
+      <section class="query_section">
+        <form action="">
+          <input
+            type="text"
+            class="glass"
+            placeholder="Search cities"
+            name="cities"
+            autocorrect="off"
+            autocomplete="off"
+            autofocus
+          />
+        </form>
+        <div class="query_btn">
+          <i
+            class="fa-solid fa-magnifying-glass fa-rotate-by fa-xl queryIcon"
+            style="color: #2a8d8d; --fa-rotate-angle: 8deg"
+          ></i>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
