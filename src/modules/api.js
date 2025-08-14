@@ -90,3 +90,4 @@ const retrieveCityInfo = async (city) => {
   }
 };
 
+export { retrieveCityInfo };
