@@ -54,6 +54,21 @@ const getImage = async (weatherCondition) => {
   return imageData.results[0].urls.regular;
 };
 
-
+// function to get city date and time base on timezone from timezoneDB api
+const getCityDateAndTime = async (timezone) => {
+  const response = await fetch(
+    `http://api.timezonedb.com/v2.1/get-time-zone?key=3TLNN3OEVD4E&format=json&by=zone&zone=${encodeURIComponent(timezone)}
+`,
+    {
+      mode: "cors",
+    }
+  );
+  const data = await response.json();
+  const dateAndTime = data.formatted;
+  const dateAndTimeParsed = parseISO(dateAndTime.replace(" ", "T"));
+  const date = format(dateAndTimeParsed, "MMM do, yyyy");
+  const time = format(dateAndTimeParsed, "hh:mm a");
+  return {date, time};
+};
 
 
