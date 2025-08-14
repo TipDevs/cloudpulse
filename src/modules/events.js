@@ -28,7 +28,7 @@ const tempTogglingEvent = (elements) => {
     PubSub.publish("toggle temp");
   });
 };
-// pubsub events
+// PubSub events that allows other modules to interacts with this module
 PubSub.subscribe("domReady", (msg, elements) => {
   PubSub.unsubscribe("queryEvent");
   PubSub.unsubscribe("temp toggling event");
