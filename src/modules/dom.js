@@ -63,3 +63,5 @@ function fetchDom() {
     queryInput,
   });
 }
+
+PubSub.subscribe("activate fetchDom", fetchDom);
