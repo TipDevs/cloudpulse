@@ -73,4 +73,20 @@ const getCityDateAndTime = async (timezone) => {
   return {date, time};
 };
 
+// function that retrieve weather conditions, city image, city date and time
+const retrieveCityInfo = async (city) => {
+  const weather = await getWeather(city);
+  if (weather.error) {
+    PubSub.publish("fetchFail UI", weather.error);
+  } else {
+    const cityImage = await getImage(weather.location);
+    const cityDateAndTime = await getCityDateAndTime(weather.timezone);
+    PubSub.publish("fetch successful UI", {
+      weather,
+      weatherImage: cityImage,
+      date: cityDateAndTime.date,
+      time: cityDateAndTime.time,
+    });
+  }
+};
 
