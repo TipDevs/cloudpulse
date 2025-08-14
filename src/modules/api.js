@@ -42,6 +42,18 @@ const getWeather = async (location) => {
   }
 };
 
+// function to get image base on weather condition of the cities searched from unsplash api
+const getImage = async (weatherCondition) => {
+  const response = await fetch(
+    `https://api.unsplash.com/search/photos?query=${encodeURIComponent(weatherCondition)}&per_page=1&client_id=vBf6_ZHfC4amRHZoyA3KP6wyebfih3kSxV_J5H2AU5Y`,
+    {
+      mode: "cors",
+    }
+  );
+  const imageData = await response.json();
+  return imageData.results[0].urls.regular;
+};
+
 
 
 
