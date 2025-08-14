@@ -1,3 +1,4 @@
+import PubSub from "pubsub-js";
 // function to fetch data from Visual Crossing weather api
 const getWeather = async (location) => {
   try {
