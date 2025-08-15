@@ -10,9 +10,15 @@ const getWeather = async (location) => {
       }
     );
     if (!response.ok) {
-      console.log(
-        `API request failed with status ${response.status} ${response.statusText}`
-      );
+      const statusMessages = {
+        400: "Invalid request format or parameters.",
+        401: "Unauthorized – check your API key.",
+        404: "Location not found.",
+        429: "Rate limit exceeded – try again later.",
+        500: "Server error – try again later."
+      };
+
+      throw new Error(statusMessages[response.status] || `Unexpected error (${response.status})`);
     }
     const weatherData = await response.json();
     console.log(weatherData.timezone);
@@ -31,7 +37,7 @@ const getWeather = async (location) => {
   // eslint-disable-next-line no-unused-vars
   } catch (error) {
     return {
-      error: "Fetch failed, pls check location and try again",
+      error,
       temp: null,
       windSpeed: null,
       condition: null,
