@@ -59,18 +59,30 @@ main.glass {
 }
 .city_info {
   position: absolute;
-  top: 8%;
+  top: 4%;
   left: 5%;
   z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3px;
 }
 .city_name {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-align: left;
+  max-width: 15ch;
+  color: #18411a;
 }
 
-.city_time {
+.city_time,
+.city_date {
   font-weight: bold;
+  text-align: left;
+  color: #745d12;
+}
+.city_date {
+  color: #745d12;
 }
 .condition_message {
   position: absolute;
@@ -79,6 +91,7 @@ main.glass {
   max-width: 35ch;
   text-align: left;
   z-index: 200;
+  color: #18411a;
 }
 .temp_toggler {
   z-index: 200;
@@ -121,7 +134,7 @@ p.fahrenheit {
 .imageGlass {
   position: absolute;
   top: 0;
-  background-color: #d9f4f485;
+  background-color: #d9f4f4bb;
 }
 .weather_info {
   width: 100%;
