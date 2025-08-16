@@ -34,7 +34,7 @@ const getWeather = async (location) => {
       timezone: weatherData.timezone,
       error: null,
     };
-  // eslint-disable-next-line no-unused-vars
+   
   } catch (error) {
     return {
       error,
